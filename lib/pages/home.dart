@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppBarHeader(title: 'Flutter Games', showHomeButton: false),
+      appBar: const AppBarHeader(title: 'Flutter Games', showGameButton: false),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 30.0,
                     fontWeight: FontWeight.w700,
-                    color: const ThemeColor(opacity: 1).darkBrown,
+                    color: const ThemeColor().darkBrown,
                   ),
                 )
             ),
@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
                 child: Card(
                   shape: RoundedRectangleBorder(
                     side: BorderSide(
-                      color: const ThemeColor(opacity: 1).darkBrown,
+                      color: const ThemeColor().darkBrown,
                       width: 1,
                     ),
                     borderRadius: BorderRadius.circular(25.0),
@@ -59,9 +59,9 @@ class HomePage extends StatelessWidget {
                         child: TextWithStroke(
                             title:'Matching Cards',
                             size: 35,
-                            strokeColor: const ThemeColor(opacity: 1.0).darkBrown,
+                            strokeColor: const ThemeColor().darkBrown,
                             color: Colors.white,
-                            strokeWidth: 4
+                            strokeWidth: 2.5
                         ),
                       ),
                     ),
@@ -77,7 +77,7 @@ class HomePage extends StatelessWidget {
                 child: Card(
                   shape: RoundedRectangleBorder(
                     side: BorderSide(
-                      color: const ThemeColor(opacity: 1).darkBrown,
+                      color: const ThemeColor().darkBrown,
                       width: 1,
                     ),
                     borderRadius: BorderRadius.circular(25.0),
@@ -99,9 +99,9 @@ class HomePage extends StatelessWidget {
                         child: TextWithStroke(
                             title:'The Price Is Right',
                             size: 35,
-                            strokeColor: const ThemeColor(opacity: 1.0).darkBrown,
+                            strokeColor: const ThemeColor().darkBrown,
                             color: Colors.white,
-                            strokeWidth: 4
+                            strokeWidth: 2.5
                         ),
                       ),
                     ),
