@@ -31,37 +31,60 @@ class AppBarHeader extends StatelessWidget with PreferredSizeWidget{
           builder: (BuildContext context) => AlertDialog(
             title: const Text(
               'Exit Game',
+              textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 28.0,
+                fontSize: 30.0,
+                fontWeight: FontWeight.w800,
               ),
             ),
-            content: const Text(
-              'Are you sure you want to exit this game ?',
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            actions: <Widget>[
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: const Text(
-                  'Cancel',
-                  style: TextStyle(
-                    fontSize: 23.0,
+            content: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(bottom: 25.0),
+                  child: const Text(
+                    'Are you sure you want to exit this game ?',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 23.0,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
-              ),
-              TextButton(
-                onPressed: () => Navigator.pushNamed(context, '/'),
-                child: const Text(
-                  'Yes',
-                  style: TextStyle(
-                    fontSize: 23.0,
-                  )
-                ),
-              ),
-            ],
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 7.5, horizontal: 10.0),
+                        child: Text(
+                          'No',
+                          style: TextStyle(
+                            fontSize: 27.0,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () => Navigator.pushNamed(context, '/'),
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 7.5, horizontal: 10.0),
+                        child: Text(
+                            'Yes',
+                            style: TextStyle(
+                              fontSize: 27.0,
+                              fontWeight: FontWeight.w600,
+                            )
+                        ),
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ):Container(),
@@ -91,44 +114,68 @@ class AppBarHeader extends StatelessWidget with PreferredSizeWidget{
             builder: (BuildContext context) => AlertDialog(
               title: const Text(
                 'Restart Game',
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 28.0,
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
-              content: const Text(
-                'Are you sure you want to restart a game ?',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              actions: <Widget>[
-                TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: const Text(
-                    'Cancel',
-                    style: TextStyle(
-                      fontSize: 23.0,
-                    ),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () => {
-                    Navigator.pop(context),
-                    Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const MatchingCardsPage(title: 'Matching Cards'))
-                    )
-                  },
-                  child: const Text(
-                      'Yes',
+              content: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 25.0),
+                    child: const Text(
+                      'Are you sure you want to restart a game ?',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 23.0,
-                      )
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
                   ),
-                ),
-              ],
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 7.5, horizontal: 10.0),
+                          child: Text(
+                            'No',
+                            style: TextStyle(
+                              fontSize: 27.0,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () => {
+                          Navigator.pop(context),
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const MatchingCardsPage(title: 'Matching Cards')
+                              )
+                          )
+                        },
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 7.5, horizontal: 10.0),
+                          child: Text(
+                              'Yes',
+                              style: TextStyle(
+                                fontSize: 27.0,
+                                fontWeight: FontWeight.w600,
+                              )
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ):Container(),

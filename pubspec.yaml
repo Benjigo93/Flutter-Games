@@ -37,6 +37,7 @@ dependencies:
   flutter_launcher_icons: ^0.9.3
   icon_decoration: ^1.0.1
   flip_card: ^0.6.0
+  rainbow_color: ^2.0.1
 
 
 dev_dependencies:
