@@ -88,7 +88,6 @@ class _MCMAinGameState extends State<MCMainGame> {
       });
       if(activePlayer != null) {
         players[activePlayer!.id].setPoints(activePlayer!.points+1);
-        Timer(const Duration(milliseconds: 1000), switchPlayer);
       }
     } else if (flippedCards.length == 2) {
       for (var i = 0; i < flippedCards.length; i++) {
@@ -158,7 +157,11 @@ class _MCMAinGameState extends State<MCMainGame> {
   void checkFinish() {
     var allFliped = cards.where((card) => card.locked == false);
     if (allFliped.isEmpty){
-      Timer(const Duration(milliseconds: 500), () => widget.onFinish(true, activePlayer));
+      MCPlayer? winner;
+      if (players.isNotEmpty) {
+        winner = players.reduce((a, b) => a.points > b.points ? a : b);
+      }
+      Timer(const Duration(milliseconds: 500), () => widget.onFinish(true, winner));
     }
   }
 

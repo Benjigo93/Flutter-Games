@@ -54,7 +54,7 @@ class _MatchingCardsPageState extends State<MatchingCardsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarHeader(title: widget.title, showGameButton: true),
+      appBar: AppBarHeader(title: widget.title, showGameButton: true, parent: 'mc'),
       body:(isFinish)?
         MCFinish(winner: winner):
         (playersCount == 0)?

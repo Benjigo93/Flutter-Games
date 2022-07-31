@@ -5,18 +5,18 @@ import 'package:rainbow_color/rainbow_color.dart';
 import '../../themes/color.dart';
 
 
-class MCFinish extends StatefulWidget {
-  const MCFinish({Key? key, required this.winner}) : super(key: key);
+class TPIRFinish extends StatefulWidget {
+  const TPIRFinish({Key? key, required this.win}) : super(key: key);
 
-  final MCPlayer? winner;
+  final bool win;
 
   @override
-  State<MCFinish> createState() => _MCFinishState();
+  State<TPIRFinish> createState() => _MCFinishState();
 }
 
-class _MCFinishState extends State<MCFinish> with SingleTickerProviderStateMixin{
+class _MCFinishState extends State<TPIRFinish> with SingleTickerProviderStateMixin{
 
-  late MCPlayer? winner;
+  late bool win;
   late AnimationController controller;
   late Animation colorAnimation;
   late Animation sizeAnimation;
@@ -27,7 +27,7 @@ class _MCFinishState extends State<MCFinish> with SingleTickerProviderStateMixin
   @override
   void initState() {
     super.initState();
-    winner = widget.winner;
+    win = widget.win;
     controller =  AnimationController(vsync: this, duration: const Duration(milliseconds: 2000));
     colorAnimation = ColorTween(begin: const ThemeColor().darkBrown, end: Colors.green).animate(controller);
     sizeAnimation = Tween<double>(begin: 100.0, end: 300.0).animate(controller);
@@ -62,24 +62,6 @@ class _MCFinishState extends State<MCFinish> with SingleTickerProviderStateMixin
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            (winner != null)?
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.70,
-              height: 130,
-              child: Container(
-                padding: const EdgeInsets.only(top:25.0),
-                child: Text(
-                  winner!.name,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 60.0,
-                    fontWeight: FontWeight.w800,
-                    color: rainbowColorAnimation.value,
-                  ),
-                ),
-              ),
-            ):
-            Container(),
             SizedBox(
               height: sizeAnimation.value,
               width: sizeAnimation.value,
@@ -88,7 +70,7 @@ class _MCFinishState extends State<MCFinish> with SingleTickerProviderStateMixin
                   Container(
                     padding: const EdgeInsets.only(top:5.0, bottom: 5.0),
                     child: Text(
-                      'Congrats \n You Win !!',
+                      win ? 'Congrats \n You Win !!' : 'Game Over \n You lost...',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: sizeFontAnimation.value,

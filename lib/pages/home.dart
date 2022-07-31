@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:games_bk/pages/the_price_is_right.dart';
 
 import '../components/app_bar_header.dart';
 import '../components/text_with_stroke.dart';
@@ -13,7 +14,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppBarHeader(title: 'Flutter Games', showGameButton: false),
+      appBar: const AppBarHeader(title: 'Flutter Games', showGameButton: false, parent: 'home'),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -89,7 +90,7 @@ class HomePage extends StatelessWidget {
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const MatchingCardsPage(title: 'Matching Cards'))
+                              builder: (context) => const TPIRPage(title: 'The Price Is Right'))
                       );
                     },
                     child: SizedBox(
