@@ -2,6 +2,8 @@
 
 Games application done with flutter
 
+### Using API 33 (Android)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
