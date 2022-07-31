@@ -27,7 +27,7 @@ class _TPRIMainGameState extends State<TPIRMainGame> {
   late bool win;
   late String computerGuidance;
   Timer? gameCountdownTimer;
-  int countdown = 10;
+  int countdown = 120;
 
   @override
   void initState() {
@@ -123,7 +123,7 @@ class _TPRIMainGameState extends State<TPIRMainGame> {
             focusNode: _focusNode,
             textAlign: TextAlign.center,
             style:const TextStyle(
-                fontSize: 25.0
+                fontSize: 50.0
             ),
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
@@ -162,7 +162,7 @@ class _TPRIMainGameState extends State<TPIRMainGame> {
             child: Text(
               computerGuidance,
               style: const TextStyle(
-                fontSize: 35.0,
+                fontSize: 45.0,
                 fontWeight: FontWeight.w700,
               ),
             ),
