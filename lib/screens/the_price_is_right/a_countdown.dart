@@ -68,7 +68,7 @@ class _TPIRCountdownState extends State<TPIRCountdown> {
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.0),
           child: Text(
-            'You have 25 seconds to make as many proposals as you wish between \n100 and 100 000.\n '
+            'You have 120 seconds to make as many proposals as you wish between \n100 and 100 000.\n '
                 'Each time being guided by the computer which tells you whether '
                 'the amount you have given is more or less expensive than the real price. '
                 'If the right price is found within this time, you win the game.',
